@@ -43,14 +43,90 @@ displayUserInfo(user);
 
 // 4. Utiliza table
 
+function displayUserTable(users) {
+    console.table(users);
+}
+
+let users = [
+    { name: "Alice", age: 30, email: "alice@example.com" },
+    { name: "Bob", age: 25, email: "bob@example.com" },
+    { name: "Charlie", age: 35, email: "charlie@example.com" }
+];
+
+displayUserTable(users);
+
+
 // 5. Utiliza group
+
+function displayUserDetails(user) {
+    console.group("Detalles del usuario:");
+    console.log(`Nombre: ${user.name}`);
+    console.log(`Edad: ${user.age}`);
+    console.log(`Correo: ${user.email}`);
+    console.groupEnd();
+}
+
+let user = { name: "Alice", age: 30, email: "alice@example.com" };
+displayUserDetails(user);
 
 // 6. Utiliza time
 
+function measureExecutionTime() {
+    console.time("Tiempo de ejecución");
+
+    // Simulamos un proceso que tarda 2 segundos
+    for (let i = 0; i < 1000000; i++) {}
+
+    console.timeEnd("Tiempo de ejecución");
+}
+
+measureExecutionTime();
+
+
 // 7. Valida con assert si un número es positivo
+
+function checkPositiveNumber(number) {
+    console.assert(number > 0, "El número debe ser positivo.");
+}
+
+checkPositiveNumber(5);  // No muestra nada, ya que el número es positivo
+checkPositiveNumber(-3); // Muestra: "El número debe ser positivo."
+
 
 // 8. Utiliza count
 
+function clickCounter() {
+    console.count("Click");
+    console.count("Click");
+    console.count("Click");
+}
+
+clickCounter();  // Muestra: "Click: 1", "Click: 2", "Click: 3"
+console.countReset("Click");  // Resetea el contador
+console.count("Click");  // Muestra: "Click: 1"
+
+
 // 9. Utiliza trace
 
+function firstFunction() {
+    secondFunction();
+}
+
+function secondFunction() {
+    console.trace("Seguimiento de la ejecución");
+}
+
+firstFunction();  // Muestra el seguimiento de la ejecución en la consola
+
+
 // 10. Utiliza clear
+
+function firstFunction() {
+    secondFunction();
+}
+
+function secondFunction() {
+    console.trace("Seguimiento de la ejecución");
+}
+
+firstFunction();  // Muestra el seguimiento de la ejecución en la consola
